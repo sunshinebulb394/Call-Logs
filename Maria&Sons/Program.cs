@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Maria_Sons.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.Name = "AspNetCore.Identity.Application";
     options.ExpireTimeSpan = TimeSpan.FromMinutes(3);
     options.SlidingExpiration = true;
+ 
+
 
 });
 

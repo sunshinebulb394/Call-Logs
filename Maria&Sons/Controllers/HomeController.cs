@@ -24,7 +24,7 @@ public class HomeController : Controller
             return View(callLogs);
         }
        
-        return View(callLogs.Where(x => x.CallerId.Contains(name)));
+        return View(callLogs.Where(x => x.CallerId.Contains(name.ToLower())));
 
     }
 
@@ -50,6 +50,7 @@ public class HomeController : Controller
             obj.CallerId = obj.CallerId.ToLower();
             _db.CallLogs.Add(obj);
             _db.SaveChanges();
+            TempData["success"] = "Call added succesfully";
             return RedirectToAction("Index");
         }
         return View(obj);
@@ -60,61 +61,36 @@ public class HomeController : Controller
     {
         double cost = 0.0;
         int rem = callDuration % 60;
-        if (callDuration <= 60)
+        if (callDuration <= 0)
         {
-
-            switch (callType)
-            {
-                case CallType.CellPhone:
-                    cost = (60 * 0.10)/60;
-                    break;
-                case CallType.FixedLine:
-                    cost = (60 * 0.08)/60;
-                    break;
-                case CallType.International:
-                    cost = (60 * 2.0)/60;
-                    break;
-            }
             return cost;
         }
 
-        else if (callDuration > 60 && rem < 30)
+        switch (callType)
         {
-            int newCallduration = callDuration - rem;
-            switch (callType)
-            {
-                case CallType.CellPhone:
-                    cost = (newCallduration * 0.10)/60;
-                    break;
-                case CallType.FixedLine:
-                    cost = (newCallduration * 0.08)/60;
-                    break;
-                case CallType.International:
-                    cost = (newCallduration * 2.0)/60;
-                    break;
-            }
-            return cost;
-
-        }
-        else if(callDuration > 60 && rem > 30)
-        {
-            int newCallDuration = (callDuration - rem) + 60;
-            switch (callType)
-            {
-                case CallType.CellPhone:
-                    cost = (newCallDuration * 0.10) / 60;
-                    break;
-                case CallType.FixedLine:
-                    cost = (newCallDuration * 0.08) / 60;
-                    break;
-                case CallType.International:
-                    cost = (newCallDuration * 2.0) / 60;
-                    break;
-            }
-            return cost;
+            case CallType.CellPhone:
+                cost = 0.10;
+                break;
+            case CallType.FixedLine:
+                cost = 0.08;
+                break;
+            case CallType.International:
+                cost = 2.0;
+                break;
+            default:
+                return cost;
         }
 
+        if (rem >= 30)
+        {
+            callDuration += 60 - rem;
+        }
+        else
+        {
+            callDuration -= rem;
+        }
 
+        cost *= callDuration / 60.0;
         return cost;
     }
 
@@ -147,7 +123,7 @@ public class HomeController : Controller
 
         _db.CallLogs.Remove(log);
         _db.SaveChanges();
-        //TempData["success"] = "Category deleted succesfully";
+        TempData["success"] = "Call deleted succesfully";
         return RedirectToAction("Index");
 
 
