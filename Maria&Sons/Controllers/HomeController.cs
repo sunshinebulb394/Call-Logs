@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Maria_Sons.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Maria_Sons.Controllers;
 
@@ -13,6 +14,8 @@ public class HomeController : Controller
         _db = db;
     }
 
+
+    [Authorize(Roles = "CEO")]
     public IActionResult Index(string name)
     {
         IEnumerable<CallLogs> callLogs = _db.CallLogs;
@@ -20,9 +23,12 @@ public class HomeController : Controller
         {
             return View(callLogs);
         }
+       
         return View(callLogs.Where(x => x.CallerId.Contains(name)));
 
     }
+
+  
 
     public IActionResult Create()
     {
@@ -32,6 +38,7 @@ public class HomeController : Controller
     //POST
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "CEO,RECEPTIONIST")]
     public IActionResult Create(CallLogs obj)
     {
         
@@ -128,6 +135,7 @@ public class HomeController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "CEO")]
     public IActionResult DeletePost(int? id)
     {
         var log = _db.CallLogs.Find(id);

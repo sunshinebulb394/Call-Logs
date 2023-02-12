@@ -297,6 +297,10 @@
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Humanizer.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/MessagePack.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/MessagePack.Annotations.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.UI.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.AspNetCore.Razor.Language.dll
@@ -328,6 +332,9 @@
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
+/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.Identity.Client.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/georgebanin/Projects/Maria&Sons/Maria&Sons/bin/Debug/net6.0/Microsoft.IdentityModel.Logging.dll

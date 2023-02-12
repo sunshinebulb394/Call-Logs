@@ -4,12 +4,13 @@
 }
 
 <div class="container p-3">
-    <form method="get" asp-action="Index" >
+    <form method="get" asp-action="Index">
         <div class="input-group">
             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="name" />
             <button type="submit" class="btn btn-outline-primary">search</button>
         </div>
     </form>
+    
     <div class="row pt-4">
         <div class="col-6">
             <h2 class="text-primary">
@@ -17,11 +18,7 @@
             </h2>
         </div>
 
-        <div class="col-6 text-end">
-            <a asp-controller="Home" asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-plus-circle"></i> &nbsp; Add new call log
-            </a>
-        </div>
+        
     </div>
 
     <table class="table table-bordered table-striped" style="width:100%">
@@ -45,7 +42,7 @@
                 <th>
                     Destination
                 </th>
-              
+
                 <th></th>
             </tr>
         </thead>
@@ -72,7 +69,7 @@
                         @obj.Destination.ToUpper()
                     </td>
 
-                 
+
                     <td>
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller="Home" asp-action="Delete" asp-route-id="@obj.id" class="btn btn-danger mx-2"><i class="bi bi-trash"></i>Delete</a>
