@@ -1,0 +1,51 @@
+﻿@model CallLogs
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<form method="post" asp-action="DeletePost">
+    <input asp-for="id" hidden />
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete Call Log</h2>
+            <hr />
+        </div>
+        @*<div asp-validation-summary="All"></div>*@
+        <div class="mb-3">
+            <label asp-for="CallerId"></label>
+            <input asp-for="CallerId" disabled class="form-control" />
+            <span asp-validation-for="CallerId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CallDate"></label>
+            <input asp-for="CallDate" disabled class="form-control" />
+            <span asp-validation-for="CallDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CostOfCall"></label>
+            <input asp-for="CostOfCall" disabled  class="form-control" />
+            <span asp-validation-for="CostOfCall" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CallType"></label>
+            <input asp-for="CallType" disabled class="form-control" />
+            <span asp-validation-for="CallType" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Destination"></label>
+            <input asp-for="Destination" disabled  class="form-control" />
+            <span asp-validation-for="Destination" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-danger" style="width:150px">
+            Back to list
+        </a>
+    </div>
+</form>
+
+@*@section Scripts{
+        @{
+            <partial name="_ValidationScriptsPartial" />
+        }
+    }*@

@@ -1,0 +1,50 @@
+﻿@model CallLogs
+
+@{
+    ViewData["Title"] = "Create";
+
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Add Call Log</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="CallerId"></label>
+            <input asp-for="CallerId" class="form-control" />
+            <span asp-validation-for="CallerId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CallDate"></label>
+            <input asp-for="CallDate" class="form-control" />
+            <span asp-validation-for="CallDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CallType"></label>
+            @Html.DropDownListFor(m => m.CallType, new List<SelectListItem>
+            {
+                new SelectListItem { Text = "Cell Phone", Value = "CellPhone" },
+                new SelectListItem { Text = "Fixed Line", Value = "FixedLine" },
+                new SelectListItem { Text = "International", Value = "International" }
+            }, "Please select", new { @class = "form-control" })
+            <span asp-validation-for="CallType" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Duration"></label>
+            <input asp-for="Duration" class="form-control" placeholder="Enter duration in seconds" />
+            <span asp-validation-for="Duration" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Destination"></label>
+            <input asp-for="Destination" class="form-control" />
+            <span asp-validation-for="Destination" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to list
+        </a>
+    </div>
+</form>
