@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "piW94+k7LbNBxpF8gvnBoYzIt4JvfujQCFkfzOYhMGrsH8Akfz/YFt3acMjXyJ8xqp/LcnLh+jOEAlcMMBrEVg==",
+  "dgSpecHash": "dyijjD9Tl1tIqjB8HtqFOnBv9B2splsXYWBqSQHQ8JrRdAatnT2dT/EqQwD4stVhXJ2R+0Yx3G4gS2TrAvcb4w==",
   "success": true,
-  "projectFilePath": "/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/Maria&Sons.csproj",
+  "projectFilePath": "/Users/georgebanin/Projects/Maria&Sons-George Kwame Banin/Maria&Sons/Maria&Sons.csproj",
   "expectedPackageFiles": [
     "/Users/georgebanin/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/georgebanin/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",

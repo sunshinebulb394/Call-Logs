@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Maria_Sons.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Hosting;
 
 namespace Maria_Sons.Controllers;
 
@@ -59,38 +60,40 @@ public class HomeController : Controller
 
     private double CalculateCallCost(int callDuration, CallType callType)
     {
-        double cost = 0.0;
-        int rem = callDuration % 60;
+        double cost = 0;
+        int secondsPerMinute = 60;
+        double costPerMinute = 0;
         if (callDuration <= 0)
         {
             return cost;
         }
 
+        int rem = callDuration % 60;
+
         switch (callType)
         {
             case CallType.CellPhone:
-                cost = 0.10;
+                costPerMinute = 0.10;
                 break;
             case CallType.FixedLine:
-                cost = 0.08;
+                costPerMinute = 0.08;
                 break;
             case CallType.International:
-                cost = 2.0;
+                costPerMinute = 2.0;
                 break;
-            default:
-                return cost;
+
         }
 
         if (rem >= 30)
         {
-            callDuration += 60 - rem;
+            callDuration += secondsPerMinute - rem;
         }
         else
         {
             callDuration -= rem;
         }
-
-        cost *= callDuration / 60.0;
+        cost = costPerMinute * callDuration / secondsPerMinute;
+        //cost *= callDuration / 60.0;
         return cost;
     }
 

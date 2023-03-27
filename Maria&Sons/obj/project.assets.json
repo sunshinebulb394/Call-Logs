@@ -10548,11 +10548,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/Maria&Sons.csproj",
+      "projectUniqueName": "/Users/georgebanin/Projects/Maria&Sons-George Kwame Banin/Maria&Sons/Maria&Sons.csproj",
       "projectName": "Maria&Sons",
-      "projectPath": "/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/Maria&Sons.csproj",
+      "projectPath": "/Users/georgebanin/Projects/Maria&Sons-George Kwame Banin/Maria&Sons/Maria&Sons.csproj",
       "packagesPath": "/Users/georgebanin/.nuget/packages/",
-      "outputPath": "/Users/georgebanin/Projects/Maria&Sons/Maria&Sons/obj/",
+      "outputPath": "/Users/georgebanin/Projects/Maria&Sons-George Kwame Banin/Maria&Sons/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/georgebanin/.nuget/NuGet/NuGet.Config"
@@ -10635,7 +10635,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }
